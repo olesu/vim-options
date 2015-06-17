@@ -24,6 +24,9 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
+set cursorline
+set colorcolumn=+1
+
 call s:EnsureDirExists(&backupdir)
 call s:EnsureDirExists(&directory)
 call s:EnsureDirExists(&undodir)
