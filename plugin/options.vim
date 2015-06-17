@@ -9,4 +9,29 @@ else
 endif
 
 set nowrap
+set list
+set autoindent sw=4
+set number
+set hlsearch
+
+function! s:EnsureDirExists(dir)
+    if empty(glob(a:dir))
+	call system("mkdir -p " . a:dir)
+    endif
+endfunction
+
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
+call s:EnsureDirExists(&backupdir)
+call s:EnsureDirExists(&directory)
+call s:EnsureDirExists(&undodir)
+
+if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype *
+		\	if &omnifunc == "" |
+		\		setlocal omnifunc=syntaxcomplete#Complete |
+		\	endif
+endif
 
