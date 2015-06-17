@@ -16,9 +16,9 @@ set hlsearch
 set visualbell
 
 function! s:EnsureDirExists(dir)
-    if empty(glob(a:dir))
-	call system("mkdir -p " . a:dir)
-    endif
+  if empty(glob(a:dir))
+    call system("mkdir -p " . a:dir)
+  endif
 endfunction
 
 set backupdir=~/.vim/backup//
@@ -33,9 +33,9 @@ call s:EnsureDirExists(&directory)
 call s:EnsureDirExists(&undodir)
 
 if has("autocmd") && exists("+omnifunc")
-    autocmd Filetype *
-		\	if &omnifunc == "" |
-		\		setlocal omnifunc=syntaxcomplete#Complete |
-		\	endif
+  autocmd Filetype *
+	\	if &omnifunc == "" |
+	\		setlocal omnifunc=syntaxcomplete#Complete |
+	\	endif
 endif
 
