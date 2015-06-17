@@ -13,6 +13,7 @@ set list
 set autoindent sw=4
 set number
 set hlsearch
+set visualbell
 
 function! s:EnsureDirExists(dir)
     if empty(glob(a:dir))
