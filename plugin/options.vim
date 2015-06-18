@@ -10,7 +10,7 @@ endif
 
 set nowrap
 set list
-set autoindent sw=4
+set expandtab ts=4 sw=4 ai
 set number
 set hlsearch
 set visualbell
