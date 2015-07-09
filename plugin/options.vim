@@ -10,15 +10,15 @@ endif
 
 set nowrap
 set list
-set autoindent sw=4
+set expandtab ts=4 sw=4 ai
 set number
 set hlsearch
 set visualbell
 
 function! s:EnsureDirExists(dir)
-    if empty(glob(a:dir))
-	call system("mkdir -p " . a:dir)
-    endif
+  if empty(glob(a:dir))
+    call system("mkdir -p " . a:dir)
+  endif
 endfunction
 
 set backupdir=~/.vim/backup//
@@ -27,6 +27,7 @@ set undodir=~/.vim/undo//
 
 set textwidth=80
 set cursorline
+set cursorcolumn
 set colorcolumn=+1
 
 call s:EnsureDirExists(&backupdir)
@@ -34,9 +35,9 @@ call s:EnsureDirExists(&directory)
 call s:EnsureDirExists(&undodir)
 
 if has("autocmd") && exists("+omnifunc")
-    autocmd Filetype *
-		\	if &omnifunc == "" |
-		\		setlocal omnifunc=syntaxcomplete#Complete |
-		\	endif
+  autocmd Filetype *
+	\	if &omnifunc == "" |
+	\		setlocal omnifunc=syntaxcomplete#Complete |
+	\	endif
 endif
 
