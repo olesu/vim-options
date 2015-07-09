@@ -25,6 +25,7 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
+set textwidth=80
 set cursorline
 set colorcolumn=+1
 
