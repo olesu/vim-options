@@ -15,6 +15,8 @@ set number
 set hlsearch
 set visualbell
 
+set fileformat=unix
+
 function! s:EnsureDirExists(dir)
   if empty(glob(a:dir))
     call system("mkdir -p " . a:dir)
